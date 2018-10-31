@@ -1,0 +1,35 @@
+# home
+root:
+    path: /
+    defaults:
+        resource: "landing"
+    methods: [GET, POST]
+    
+action:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "supplements"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
+
+supplements:
+    path: /{resource}{slash}
+    requirements:
+        resource: "supplements"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
+
+supplementsaction:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "supplements"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
+
+monolog:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "monolog"
+        slash: "[/]{0,1}"
+    methods: [GET, DELETE]
+
